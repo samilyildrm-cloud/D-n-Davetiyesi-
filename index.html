@@ -3,88 +3,294 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aryan & Erkam | Düğün Davetiyesi</title>
+<title>Aryan & Erkam | Düğünümüze Davetlisiniz</title>
+
+<!-- WHATSAPP / SOSYAL MEDYA ÖNİZLEME -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aryan & Erkam 💍 Düğünümüze Davetlisiniz">
+<meta property="og:description" content="31 Ağustos 2026 Pazartesi • Saat 18:00 • Beyazsaray Düğün Salonu, Kahta / Adıyaman">
+<meta property="og:url" content="https://samilyildrm-cloud.github.io/D-n-Davetiyesi-/">
+<meta property="og:site_name" content="Aryan & Erkam Düğün Davetiyesi">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aryan & Erkam 💍 Düğünümüze Davetlisiniz">
+<meta name="twitter:description" content="31 Ağustos 2026 Pazartesi • Saat 18:00 • Kahta / Adıyaman">
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Georgia,"Times New Roman",serif;
     background:#f8eee9;
     color:#593f3f;
+    overflow-x:hidden;
 }
 
-.container{
-    max-width:800px;
+/* =========================
+   ARKA PLAN KALPLERİ
+========================= */
+
+.floating-heart{
+    position:fixed;
+    bottom:-40px;
+    font-size:20px;
+    opacity:.55;
+    animation:heartFloat 8s linear infinite;
+    pointer-events:none;
+    z-index:0;
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.55;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   ANA
+========================= */
+
+.page{
+    position:relative;
+    z-index:1;
+    max-width:850px;
     margin:auto;
-    padding:20px;
+    padding:15px;
 }
 
-/* AÇILIŞ */
+/* =========================
+   AÇILIŞ
+========================= */
 
 .hero{
     min-height:100vh;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     background:
-      radial-gradient(circle,#fffaf7,#ead4ca);
-    border-radius:0 0 40px 40px;
+        radial-gradient(
+            circle at center,
+            #fffaf7 0%,
+            #f3ddd4 55%,
+            #e4c6bb 100%
+        );
+
+    border-radius:0 0 50px 50px;
+
+    position:relative;
+    overflow:hidden;
+
+    animation:heroAppear 1.5s ease;
+}
+
+@keyframes heroAppear{
+    from{
+        opacity:0;
+        transform:scale(1.04);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border:1px solid rgba(160,110,90,.25);
+    border-radius:50%;
+    animation:rotate 25s linear infinite;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:1px solid rgba(160,110,90,.15);
+    border-radius:50%;
+    animation:rotateReverse 35s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse{
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
 }
 
 .hero-small{
-    letter-spacing:4px;
+    letter-spacing:5px;
     color:#9b7169;
-    font-size:14px;
+    font-size:13px;
     text-transform:uppercase;
+
+    animation:fadeDown 1.5s ease;
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .hero h1{
-    font-size:clamp(55px,13vw,95px);
+    font-size:clamp(60px,15vw,105px);
     font-weight:normal;
-    line-height:.9;
+    line-height:.8;
     color:#704747;
-    margin-top:25px;
+
+    margin-top:30px;
+
+    animation:nameAppear 2s ease;
+}
+
+@keyframes nameAppear{
+    from{
+        opacity:0;
+        transform:scale(.7);
+        letter-spacing:20px;
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+        letter-spacing:normal;
+    }
 }
 
 .hero h1 span{
     display:block;
-    font-size:.5em;
+    font-size:.45em;
     color:#b58b69;
-    margin:15px;
+    margin:22px;
     font-style:italic;
-}
-
-.hero-sub{
-    margin-top:30px;
-    font-size:22px;
-    color:#754f4f;
 }
 
 .ornament{
     margin:25px;
-    font-size:32px;
+    font-size:35px;
     color:#b58969;
+
+    animation:pulse 2s ease-in-out infinite;
 }
 
-/* KART */
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+.hero-sub{
+    margin-top:25px;
+    font-size:22px;
+    color:#754f4f;
+
+    animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   KART
+========================= */
 
 .card{
-    margin:35px 0;
-    padding:40px 25px;
-    background:rgba(255,255,255,.8);
+    margin:40px 0;
+    padding:45px 25px;
+
+    background:rgba(255,255,255,.88);
+
     border:1px solid #d9b9aa;
+
     border-radius:30px;
+
     text-align:center;
-    box-shadow:0 15px 35px rgba(80,45,45,.1);
+
+    box-shadow:
+        0 20px 50px rgba(80,45,45,.12);
+
+    animation:cardAppear 1s ease;
+}
+
+@keyframes cardAppear{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .card h2{
@@ -95,16 +301,18 @@ body{
 
 .card p{
     font-size:18px;
-    line-height:1.8;
+    line-height:1.9;
 }
 
-/* GERİ SAYIM */
+/* =========================
+   GERİ SAYIM
+========================= */
 
 .count-title{
     text-align:center;
     color:#754949;
-    font-size:28px;
-    margin:45px 0 20px;
+    font-size:29px;
+    margin:50px 0 20px;
 }
 
 .countdown{
@@ -115,32 +323,56 @@ body{
 
 .count{
     background:white;
+
     border:1px solid #ddc3b5;
-    border-radius:18px;
+
+    border-radius:20px;
+
     padding:20px 5px;
+
     text-align:center;
+
+    box-shadow:0 8px 25px rgba(80,45,45,.08);
+
+    transition:.3s;
+}
+
+.count:hover{
+    transform:translateY(-7px);
 }
 
 .count strong{
     display:block;
     color:#8d6058;
-    font-size:28px;
+    font-size:30px;
 }
 
 .count small{
     color:#8b7370;
     font-size:10px;
+    letter-spacing:1px;
 }
 
-/* ARABA */
+/* =========================
+   ARABA
+========================= */
 
 .car-section{
-    margin:40px 0;
-    padding:35px 10px;
-    background:linear-gradient(#f7e8e1,#e7cec4);
+    margin:45px 0;
+    padding:40px 10px;
+
+    background:
+        linear-gradient(
+            #f7e8e1,
+            #e7cec4
+        );
+
     border:1px solid #d2ae9e;
+
     border-radius:30px;
+
     text-align:center;
+
     overflow:hidden;
 }
 
@@ -151,34 +383,65 @@ body{
 
 .road{
     position:relative;
-    height:110px;
+    height:125px;
+
     border-bottom:5px solid #78615c;
+
     overflow:hidden;
 }
 
 .road:before{
     content:"";
+
     position:absolute;
+
     left:0;
     right:0;
-    top:60px;
+
+    top:70px;
+
     border-top:4px dashed white;
 }
 
 .car{
     position:absolute;
-    left:-130px;
-    top:20px;
+
+    left:-150px;
+    top:23px;
+
     font-size:58px;
+
     cursor:pointer;
-    transition:left 4s ease;
+
+    transition:
+        left 4s cubic-bezier(.2,.8,.2,1);
+
+    user-select:none;
+}
+
+.car:hover{
+    transform:scale(1.08);
 }
 
 .destination{
     position:absolute;
+
     right:15px;
-    top:25px;
-    font-size:45px;
+    top:30px;
+
+    font-size:48px;
+
+    animation:destinationPulse 1.5s infinite;
+}
+
+@keyframes destinationPulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
 }
 
 .car-note{
@@ -186,63 +449,126 @@ body{
     font-size:14px;
 }
 
-/* ETKİNLİK */
+/* =========================
+   ETKİNLİKLER
+========================= */
 
 .event{
     background:white;
+
     border:1px solid #d9b9aa;
-    border-radius:28px;
-    padding:35px 20px;
-    margin:25px 0;
+
+    border-radius:30px;
+
+    padding:40px 20px;
+
+    margin:30px 0;
+
     text-align:center;
-    box-shadow:0 12px 30px rgba(80,45,45,.08);
+
+    box-shadow:
+        0 15px 40px rgba(80,45,45,.09);
+
+    transition:
+        transform .4s,
+        box-shadow .4s;
+}
+
+.event:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(80,45,45,.15);
 }
 
 .event h2{
     color:#794c4c;
+
     font-size:30px;
-    margin-bottom:15px;
+
+    margin-bottom:18px;
 }
 
 .date{
     color:#9b6c62;
+
     font-size:18px;
+
     font-weight:bold;
-    line-height:1.7;
+
+    line-height:1.8;
+
     margin-bottom:15px;
 }
 
 .location{
     font-size:17px;
-    line-height:1.7;
+
+    line-height:1.8;
+
     margin-bottom:22px;
 }
 
 .map-btn{
     display:inline-block;
-    padding:13px 24px;
+
+    padding:14px 25px;
+
     border-radius:30px;
-    background:linear-gradient(135deg,#a77567,#7f514d);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a77567,
+            #7f514d
+        );
+
     color:white;
+
     text-decoration:none;
+
     font-family:Arial,sans-serif;
+
+    transition:.3s;
+
+    box-shadow:
+        0 7px 18px rgba(110,70,60,.25);
 }
 
-/* AİLELER */
+.map-btn:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   AİLELER
+========================= */
 
 .families{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:20px;
-    margin:40px 0;
+
+    margin:45px 0;
 }
 
 .family{
     background:white;
+
     border:1px solid #d9b9aa;
+
     border-radius:25px;
+
     padding:30px 10px;
+
     text-align:center;
+
+    transition:.4s;
+}
+
+.family:hover{
+    transform:translateY(-8px) scale(1.02);
 }
 
 .family h3{
@@ -260,34 +586,98 @@ body{
     letter-spacing:3px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
     text-align:center;
-    padding:45px 10px;
+    padding:50px 10px;
 }
 
 .footer-heart{
-    font-size:55px;
+    font-size:60px;
+
+    animation:
+        heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:scale(1.2);
+    }
+
+    40%{
+        transform:scale(1);
+    }
+
+    60%{
+        transform:scale(1.15);
+    }
 }
 
 .footer p{
     font-size:18px;
-    line-height:1.7;
+    line-height:1.8;
     margin:20px 0;
 }
 
 .footer-names{
-    font-size:38px;
+    font-size:40px;
     color:#754949;
 }
 
-/* MOBİL */
+/* =========================
+   MÜZİK BUTONU
+========================= */
+
+.music-btn{
+    position:fixed;
+
+    right:18px;
+    bottom:18px;
+
+    width:52px;
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#7f514d;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:100;
+
+    box-shadow:
+        0 8px 25px rgba(70,40,40,.3);
+}
+
+/* =========================
+   MOBİL
+========================= */
 
 @media(max-width:600px){
 
-    .container{
-        padding:10px;
+    .page{
+        padding:8px;
+    }
+
+    .hero{
+        min-height:95vh;
+    }
+
+    .hero h1{
+        font-size:70px;
     }
 
     .count strong{
@@ -305,278 +695,354 @@ body{
     .car{
         font-size:48px;
     }
+
+    .footer-names{
+        font-size:32px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- YÜZEN KALPLER -->
+
+<div class="floating-heart" style="left:10%;animation-delay:0s;">♡</div>
+<div class="floating-heart" style="left:25%;animation-delay:3s;">♥</div>
+<div class="floating-heart" style="left:45%;animation-delay:1s;">♡</div>
+<div class="floating-heart" style="left:65%;animation-delay:4s;">♥</div>
+<div class="floating-heart" style="left:82%;animation-delay:2s;">♡</div>
+
+
+<div class="page">
+
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="hero-small">
-        Bir Ömür Boyu Mutluluğa
-    </div>
+<div class="hero-content">
 
-    <h1>
-        Aryan
-        <span>&amp;</span>
-        Erkam
-    </h1>
+<div class="hero-small">
+Bir Ömür Boyu Mutluluğa
+</div>
 
-    <div class="ornament">
-        ❦
-    </div>
+<h1>
+Aryan
+<span>&amp;</span>
+Erkam
+</h1>
 
-    <div class="hero-sub">
-        Düğünümüze Davetlisiniz
-    </div>
+<div class="ornament">
+❦
+</div>
+
+<div class="hero-sub">
+Düğünümüze Davetlisiniz
+</div>
+
+</div>
 
 </section>
 
+
+<!-- DAVET -->
 
 <section class="card">
 
-    <h2>Sevgili Dostlarımız</h2>
+<h2>
+Sevgili Dostlarımız
+</h2>
 
-    <p>
-        Bir ömür boyu mutluluğa atacağımız ilk adımda,
-        bu güzel günümüzde sizleri de yanımızda görmekten
-        büyük mutluluk duyacağız.
-    </p>
+<p>
+Bir ömür boyu mutluluğa atacağımız ilk adımda,
+bu özel günümüzde sizleri de yanımızda görmekten
+büyük mutluluk duyacağız.
+</p>
 
-    <div class="ornament">
-        ♡
-    </div>
+<div class="ornament">
+♡
+</div>
 
-    <p>
-        <strong>Aryan &amp; Erkam</strong>
-    </p>
+<p>
+<strong>Aryan &amp; Erkam</strong>
+</p>
 
 </section>
 
 
+<!-- GERİ SAYIM -->
+
 <h2 class="count-title">
-    Mutluluğumuza Kalan Zaman
+💍 Mutluluğumuza Kalan Zaman
 </h2>
 
 <div class="countdown">
 
-    <div class="count">
-        <strong id="days">0</strong>
-        <small>GÜN</small>
-    </div>
+<div class="count">
+<strong id="days">0</strong>
+<small>GÜN</small>
+</div>
 
-    <div class="count">
-        <strong id="hours">0</strong>
-        <small>SAAT</small>
-    </div>
+<div class="count">
+<strong id="hours">0</strong>
+<small>SAAT</small>
+</div>
 
-    <div class="count">
-        <strong id="minutes">0</strong>
-        <small>DAKİKA</small>
-    </div>
+<div class="count">
+<strong id="minutes">0</strong>
+<small>DAKİKA</small>
+</div>
 
-    <div class="count">
-        <strong id="seconds">0</strong>
-        <small>SANİYE</small>
-    </div>
+<div class="count">
+<strong id="seconds">0</strong>
+<small>SANİYE</small>
+</div>
 
 </div>
 
+
+<!-- ARABA -->
 
 <section class="car-section">
 
-    <h2>
-        🚗 Mutluluğa Doğru
-    </h2>
+<h2>
+🚗💨 Mutluluğa Doğru
+</h2>
 
-    <div class="road">
+<div class="road">
 
-        <div class="destination">
-            💒
-        </div>
+<div class="destination">
+💒
+</div>
 
-        <div
-            class="car"
-            id="car"
-            onclick="driveCar()"
-        >
-            🚗💨
-        </div>
+<div
+class="car"
+id="car"
+onclick="driveCar()"
+>
+🚗💨
+</div>
 
-    </div>
+</div>
 
-    <div class="car-note">
-        Arabaya dokunun, mutluluğa doğru yola çıksın. 💕
-    </div>
+<div class="car-note">
+🚗 Arabaya dokunun, gelin ve damat düğünümüze doğru yola çıksın. ❤️
+</div>
 
 </section>
 
+
+<!-- KINA -->
 
 <section class="event">
 
-    <h2>🌹 Kına Gecesi</h2>
+<h2>
+🌹 Kına Gecesi
+</h2>
 
-    <div class="date">
-        28 Ağustos 2026 Cuma<br>
-        Saat 19:00
-    </div>
+<div class="date">
+28 Ağustos 2026 Cuma<br>
+Saat 19:00
+</div>
 
-    <div class="location">
-        Bağlarçeşme Mah. 19 Mayıs Bulvarı<br>
-        No:20/C Taşçı Plaza<br>
-        Esenyurt / İstanbul
-    </div>
+<div class="location">
 
-    <a
-        class="map-btn"
-        href="https://www.google.com/maps/search/?api=1&query=Bağlarçeşme+Mahallesi+19+Mayıs+Bulvarı+No+20%2FC+Taşçı+Plaza+Esenyurt+İstanbul"
-        target="_blank"
-    >
-        📍 Kına Yeri İçin Yol Tarifi
-    </a>
+Bağlarçeşme Mah. 19 Mayıs Bulvarı<br>
+
+No:20/C Taşçı Plaza<br>
+
+Esenyurt / İstanbul
+
+</div>
+
+<a
+class="map-btn"
+href="https://www.google.com/maps/search/?api=1&query=Bağlarçeşme+Mahallesi+19+Mayıs+Bulvarı+No+20%2FC+Taşçı+Plaza+Esenyurt+İstanbul"
+target="_blank"
+>
+📍 Kına Yeri İçin Yol Tarifi
+</a>
 
 </section>
 
+
+<!-- DÜĞÜN -->
 
 <section class="event">
 
-    <h2>💍 Düğün &amp; Nikâh</h2>
+<h2>
+💍 Düğün &amp; Nikâh
+</h2>
 
-    <div class="date">
-        31 Ağustos 2026 Pazartesi<br>
-        Saat 18:00
-    </div>
+<div class="date">
 
-    <div class="location">
-        Beyazsaray Düğün Salonu<br>
-        Baraj Yolu Üzeri<br>
-        Kahta / Adıyaman
-    </div>
+31 Ağustos 2026 Pazartesi<br>
 
-    <a
-        class="map-btn"
-        href="https://www.google.com/maps/search/?api=1&query=Beyazsaray+Düğün+Salonu+Kahta+Adıyaman"
-        target="_blank"
-    >
-        📍 Düğün Salonu İçin Yol Tarifi
-    </a>
+Saat 18:00
+
+</div>
+
+<div class="location">
+
+Beyazsaray Düğün Salonu<br>
+
+Baraj Yolu Üzeri<br>
+
+Kahta / Adıyaman
+
+</div>
+
+<a
+class="map-btn"
+href="https://www.google.com/maps/search/?api=1&query=Beyazsaray+Düğün+Salonu+Kahta+Adıyaman"
+target="_blank"
+>
+📍 Düğün Salonu İçin Yol Tarifi
+</a>
 
 </section>
 
+
+<!-- AİLELER -->
 
 <div class="families">
 
-    <div class="family">
+<div class="family">
 
-        <h3>Yıldız Ailesi</h3>
+<h3>
+Yıldız Ailesi
+</h3>
 
-        <p>
-            Kevser &amp; Refik
-        </p>
+<p>
+Kevser &amp; Refik
+</p>
 
-        <strong>
-            YILDIZ
-        </strong>
-
-    </div>
-
-    <div class="family">
-
-        <h3>Yıldırım Ailesi</h3>
-
-        <p>
-            Emine &amp; Mithat
-        </p>
-
-        <strong>
-            YILDIRIM
-        </strong>
-
-    </div>
+<strong>
+YILDIZ
+</strong>
 
 </div>
 
 
+<div class="family">
+
+<h3>
+Yıldırım Ailesi
+</h3>
+
+<p>
+Emine &amp; Mithat
+</p>
+
+<strong>
+YILDIRIM
+</strong>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer class="footer">
 
-    <div class="footer-heart">
-        💖
-    </div>
+<div class="footer-heart">
+💖
+</div>
 
-    <p>
-        Bu mutlu günümüzde sizleri de aramızda
-        görmekten onur duyarız.
-    </p>
+<p>
+Bu mutlu günümüzde sizleri de aramızda
+görmekten onur duyarız.
+</p>
 
-    <div class="footer-names">
-        Aryan &amp; Erkam
-    </div>
+<div class="footer-names">
+Aryan &amp; Erkam
+</div>
 
-    <div class="ornament">
-        ❦
-    </div>
+<div class="ornament">
+❦
+</div>
 
-    <p>
-        31 Ağustos 2026
-    </p>
+<p>
+31 Ağustos 2026
+</p>
 
 </footer>
 
 </div>
 
 
+<!-- MÜZİK -->
+
+<button
+class="music-btn"
+id="musicButton"
+onclick="toggleMusic()"
+>
+🔇
+</button>
+
+
 <script>
 
-/* GERİ SAYIM */
+/* =========================
+   GERİ SAYIM
+========================= */
 
 const weddingDate =
-    new Date("2026-08-31T18:00:00+03:00").getTime();
+new Date("2026-08-31T18:00:00+03:00").getTime();
 
 function updateCountdown(){
 
-    const now =
-        new Date().getTime();
+const now =
+new Date().getTime();
 
-    const distance =
-        weddingDate - now;
+const distance =
+weddingDate-now;
 
-    if(distance <= 0){
+if(distance<=0){
 
-        document.getElementById("days").textContent = "0";
-        document.getElementById("hours").textContent = "0";
-        document.getElementById("minutes").textContent = "0";
-        document.getElementById("seconds").textContent = "0";
+document.getElementById("days").textContent="0";
+document.getElementById("hours").textContent="0";
+document.getElementById("minutes").textContent="0";
+document.getElementById("seconds").textContent="0";
 
-        document.querySelector(".count-title")
-            .textContent =
-            "Bugün bizim en özel günümüz! 💍";
+document.querySelector(".count-title")
+.textContent=
+"💍 Bugün bizim en özel günümüz! 💍";
 
-        return;
-    }
+return;
 
-    document.getElementById("days").textContent =
-        Math.floor(distance/(1000*60*60*24));
+}
 
-    document.getElementById("hours").textContent =
-        Math.floor(
-            (distance%(1000*60*60*24))
-            /(1000*60*60)
-        );
+document.getElementById("days").textContent=
+Math.floor(
+distance/(1000*60*60*24)
+);
 
-    document.getElementById("minutes").textContent =
-        Math.floor(
-            (distance%(1000*60*60))
-            /(1000*60)
-        );
+document.getElementById("hours").textContent=
+Math.floor(
+(distance%(1000*60*60*24))
+/
+(1000*60*60)
+);
 
-    document.getElementById("seconds").textContent =
-        Math.floor(
-            (distance%(1000*60))
-            /1000
-        );
+document.getElementById("minutes").textContent=
+Math.floor(
+(distance%(1000*60*60))
+/
+(1000*60)
+);
+
+document.getElementById("seconds").textContent=
+Math.floor(
+(distance%(1000*60))
+/
+1000
+);
+
 }
 
 updateCountdown();
@@ -584,30 +1050,87 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 
-/* ARABA */
+/* =========================
+   ARABA
+========================= */
 
-let carMoved = false;
+let carMoved=false;
 
 function driveCar(){
 
-    const car =
-        document.getElementById("car");
+const car=
+document.getElementById("car");
 
-    if(!carMoved){
+if(!carMoved){
 
-        car.style.left =
-            "calc(100% - 125px)";
+car.style.left=
+"calc(100% - 125px)";
 
-        carMoved = true;
+carMoved=true;
 
-    }else{
+}else{
 
-        car.style.left =
-            "-130px";
+car.style.left=
+"-150px";
 
-        carMoved = false;
+carMoved=false;
 
-    }
+}
+
+}
+
+
+/* =========================
+   MÜZİK
+========================= */
+
+let musicPlaying=false;
+
+let audio=null;
+
+function toggleMusic(){
+
+const button=
+document.getElementById("musicButton");
+
+if(!audio){
+
+audio=new Audio();
+
+audio.loop=true;
+
+audio.src=
+"https://cdn.pixabay.com/audio/2022/03/15/audio_6d7c1f0d2d.mp3";
+
+}
+
+if(!musicPlaying){
+
+audio.play()
+.then(()=>{
+
+musicPlaying=true;
+
+button.textContent="🔊";
+
+})
+.catch(()=>{
+
+alert(
+"Müziği başlatmak için tekrar dokunun."
+);
+
+});
+
+}else{
+
+audio.pause();
+
+musicPlaying=false;
+
+button.textContent="🔇";
+
+}
 
 }
 
@@ -616,4 +1139,3 @@ function driveCar(){
 </body>
 </html>
 ```
-
