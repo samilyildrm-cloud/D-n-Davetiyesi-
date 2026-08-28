@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aryan & Erkam - Düğün Davetiyesi</title>
   
-  <!-- WhatsApp Önizleme Ayarları -->
+  <!-- WhatsApp ve Sosyal Medya Önizleme Ayarları (Open Graph) -->
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Aryan & Erkam Düğün Davetiyesi 💍">
   <meta property="og:description" content="31 Ağustos 2026 Pazartesi - Düğünümüze davetlisiniz!">
-  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="315">
 
   <!-- Fontlar -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
