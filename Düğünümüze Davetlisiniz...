@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan & Erkam - Düğün Davetiyesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <header class="header">
+            <h2 class="title">Davetlisiniz...</h2>
+            <p class="verse">“İçinizden kendileriyle huzura kavuşacağınız eşler yaratıp, aranızda muhabbet ve rahmet var etmesi, O'nun varlığının delillerindendir.” <br><span>(Rum 21)</span></p>
+        </header>
+
+        <section class="names-section">
+            <h1 class="couple-names">Aryan & Erkam</h1>
+            <div class="monogram">A | E</div>
+            <div class="main-date">AĞUSTOS / 31 / 2026<br><small>PAZARTESİ</small></div>
+        </section>
+
+        <section class="families">
+            <div class="family">
+                <h3>Ailesi</h3>
+                <p>Kevser & Refik</p>
+                <strong>YILDIZ</strong>
+            </div>
+            <div class="family">
+                <h3>Ailesi</h3>
+                <p>Emine & Mithat</p>
+                <strong>YILDIRIM</strong>
+            </div>
+        </section>
+
+        <section class="events">
+            <!-- KINA GECESİ -->
+            <div class="event-card">
+                <div class="event-title">Kına Gecesi</div>
+                <div class="event-date">28.08.2026</div>
+                <div class="event-time">Cuma Saat: 19.00</div>
+                <div class="event-address">
+                    Bağlarçeşme Mah. 19 Mayıs Bulvarı No:20/C<br>
+                    Taşçı Plaza - Esenyurt / İSTANBUL
+                </div>
+                <a href="https://maps.google.com/?q=Bağlarçeşme+Mah.+19+Mayıs+Bulvarı+No:20/C+Esenyurt+İstanbul" target="_blank" class="btn">Yol Tarifi Al</a>
+            </div>
+
+            <!-- DÜĞÜN -->
+            <div class="event-card">
+                <div class="event-title">Düğün</div>
+                <div class="event-date">31.08.2026</div>
+                <div class="event-time">Pazartesi Saat: 18.00</div>
+                <div class="event-address">
+                    Beyazsaray Düğün Salonu (Baraj Yolu Üzeri)<br>
+                    Kahta / ADIYAMAN
+                </div>
+                <a href="https://maps.google.com/?q=Beyazsaray+Düğün+Salonu+Kahta+Adıyaman" target="_blank" class="btn">Yol Tarifi Al</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
