@@ -1,1 +1,619 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aryan & Erkam | Düğün Davetiyesi</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f8eee9;
+    color:#593f3f;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+/* AÇILIŞ */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+      radial-gradient(circle,#fffaf7,#ead4ca);
+    border-radius:0 0 40px 40px;
+}
+
+.hero-small{
+    letter-spacing:4px;
+    color:#9b7169;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(55px,13vw,95px);
+    font-weight:normal;
+    line-height:.9;
+    color:#704747;
+    margin-top:25px;
+}
+
+.hero h1 span{
+    display:block;
+    font-size:.5em;
+    color:#b58b69;
+    margin:15px;
+    font-style:italic;
+}
+
+.hero-sub{
+    margin-top:30px;
+    font-size:22px;
+    color:#754f4f;
+}
+
+.ornament{
+    margin:25px;
+    font-size:32px;
+    color:#b58969;
+}
+
+/* KART */
+
+.card{
+    margin:35px 0;
+    padding:40px 25px;
+    background:rgba(255,255,255,.8);
+    border:1px solid #d9b9aa;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(80,45,45,.1);
+}
+
+.card h2{
+    color:#794d4d;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.card p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* GERİ SAYIM */
+
+.count-title{
+    text-align:center;
+    color:#754949;
+    font-size:28px;
+    margin:45px 0 20px;
+}
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.count{
+    background:white;
+    border:1px solid #ddc3b5;
+    border-radius:18px;
+    padding:20px 5px;
+    text-align:center;
+}
+
+.count strong{
+    display:block;
+    color:#8d6058;
+    font-size:28px;
+}
+
+.count small{
+    color:#8b7370;
+    font-size:10px;
+}
+
+/* ARABA */
+
+.car-section{
+    margin:40px 0;
+    padding:35px 10px;
+    background:linear-gradient(#f7e8e1,#e7cec4);
+    border:1px solid #d2ae9e;
+    border-radius:30px;
+    text-align:center;
+    overflow:hidden;
+}
+
+.car-section h2{
+    color:#744848;
+    margin-bottom:25px;
+}
+
+.road{
+    position:relative;
+    height:110px;
+    border-bottom:5px solid #78615c;
+    overflow:hidden;
+}
+
+.road:before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:60px;
+    border-top:4px dashed white;
+}
+
+.car{
+    position:absolute;
+    left:-130px;
+    top:20px;
+    font-size:58px;
+    cursor:pointer;
+    transition:left 4s ease;
+}
+
+.destination{
+    position:absolute;
+    right:15px;
+    top:25px;
+    font-size:45px;
+}
+
+.car-note{
+    margin-top:20px;
+    font-size:14px;
+}
+
+/* ETKİNLİK */
+
+.event{
+    background:white;
+    border:1px solid #d9b9aa;
+    border-radius:28px;
+    padding:35px 20px;
+    margin:25px 0;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(80,45,45,.08);
+}
+
+.event h2{
+    color:#794c4c;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.date{
+    color:#9b6c62;
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+.location{
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.map-btn{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#a77567,#7f514d);
+    color:white;
+    text-decoration:none;
+    font-family:Arial,sans-serif;
+}
+
+/* AİLELER */
+
+.families{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin:40px 0;
+}
+
+.family{
+    background:white;
+    border:1px solid #d9b9aa;
+    border-radius:25px;
+    padding:30px 10px;
+    text-align:center;
+}
+
+.family h3{
+    color:#855452;
+    margin-bottom:10px;
+}
+
+.family p{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.family strong{
+    color:#b08063;
+    letter-spacing:3px;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:45px 10px;
+}
+
+.footer-heart{
+    font-size:55px;
+}
+
+.footer p{
+    font-size:18px;
+    line-height:1.7;
+    margin:20px 0;
+}
+
+.footer-names{
+    font-size:38px;
+    color:#754949;
+}
+
+/* MOBİL */
+
+@media(max-width:600px){
+
+    .container{
+        padding:10px;
+    }
+
+    .count strong{
+        font-size:22px;
+    }
+
+    .families{
+        grid-template-columns:1fr;
+    }
+
+    .event{
+        padding:30px 15px;
+    }
+
+    .car{
+        font-size:48px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="hero">
+
+    <div class="hero-small">
+        Bir Ömür Boyu Mutluluğa
+    </div>
+
+    <h1>
+        Aryan
+        <span>&amp;</span>
+        Erkam
+    </h1>
+
+    <div class="ornament">
+        ❦
+    </div>
+
+    <div class="hero-sub">
+        Düğünümüze Davetlisiniz
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <h2>Sevgili Dostlarımız</h2>
+
+    <p>
+        Bir ömür boyu mutluluğa atacağımız ilk adımda,
+        bu güzel günümüzde sizleri de yanımızda görmekten
+        büyük mutluluk duyacağız.
+    </p>
+
+    <div class="ornament">
+        ♡
+    </div>
+
+    <p>
+        <strong>Aryan &amp; Erkam</strong>
+    </p>
+
+</section>
+
+
+<h2 class="count-title">
+    Mutluluğumuza Kalan Zaman
+</h2>
+
+<div class="countdown">
+
+    <div class="count">
+        <strong id="days">0</strong>
+        <small>GÜN</small>
+    </div>
+
+    <div class="count">
+        <strong id="hours">0</strong>
+        <small>SAAT</small>
+    </div>
+
+    <div class="count">
+        <strong id="minutes">0</strong>
+        <small>DAKİKA</small>
+    </div>
+
+    <div class="count">
+        <strong id="seconds">0</strong>
+        <small>SANİYE</small>
+    </div>
+
+</div>
+
+
+<section class="car-section">
+
+    <h2>
+        🚗 Mutluluğa Doğru
+    </h2>
+
+    <div class="road">
+
+        <div class="destination">
+            💒
+        </div>
+
+        <div
+            class="car"
+            id="car"
+            onclick="driveCar()"
+        >
+            🚗💨
+        </div>
+
+    </div>
+
+    <div class="car-note">
+        Arabaya dokunun, mutluluğa doğru yola çıksın. 💕
+    </div>
+
+</section>
+
+
+<section class="event">
+
+    <h2>🌹 Kına Gecesi</h2>
+
+    <div class="date">
+        28 Ağustos 2026 Cuma<br>
+        Saat 19:00
+    </div>
+
+    <div class="location">
+        Bağlarçeşme Mah. 19 Mayıs Bulvarı<br>
+        No:20/C Taşçı Plaza<br>
+        Esenyurt / İstanbul
+    </div>
+
+    <a
+        class="map-btn"
+        href="https://www.google.com/maps/search/?api=1&query=Bağlarçeşme+Mahallesi+19+Mayıs+Bulvarı+No+20%2FC+Taşçı+Plaza+Esenyurt+İstanbul"
+        target="_blank"
+    >
+        📍 Kına Yeri İçin Yol Tarifi
+    </a>
+
+</section>
+
+
+<section class="event">
+
+    <h2>💍 Düğün &amp; Nikâh</h2>
+
+    <div class="date">
+        31 Ağustos 2026 Pazartesi<br>
+        Saat 18:00
+    </div>
+
+    <div class="location">
+        Beyazsaray Düğün Salonu<br>
+        Baraj Yolu Üzeri<br>
+        Kahta / Adıyaman
+    </div>
+
+    <a
+        class="map-btn"
+        href="https://www.google.com/maps/search/?api=1&query=Beyazsaray+Düğün+Salonu+Kahta+Adıyaman"
+        target="_blank"
+    >
+        📍 Düğün Salonu İçin Yol Tarifi
+    </a>
+
+</section>
+
+
+<div class="families">
+
+    <div class="family">
+
+        <h3>Yıldız Ailesi</h3>
+
+        <p>
+            Kevser &amp; Refik
+        </p>
+
+        <strong>
+            YILDIZ
+        </strong>
+
+    </div>
+
+    <div class="family">
+
+        <h3>Yıldırım Ailesi</h3>
+
+        <p>
+            Emine &amp; Mithat
+        </p>
+
+        <strong>
+            YILDIRIM
+        </strong>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+
+    <div class="footer-heart">
+        💖
+    </div>
+
+    <p>
+        Bu mutlu günümüzde sizleri de aramızda
+        görmekten onur duyarız.
+    </p>
+
+    <div class="footer-names">
+        Aryan &amp; Erkam
+    </div>
+
+    <div class="ornament">
+        ❦
+    </div>
+
+    <p>
+        31 Ağustos 2026
+    </p>
+
+</footer>
+
+</div>
+
+
+<script>
+
+/* GERİ SAYIM */
+
+const weddingDate =
+    new Date("2026-08-31T18:00:00+03:00").getTime();
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const distance =
+        weddingDate - now;
+
+    if(distance <= 0){
+
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+
+        document.querySelector(".count-title")
+            .textContent =
+            "Bugün bizim en özel günümüz! 💍";
+
+        return;
+    }
+
+    document.getElementById("days").textContent =
+        Math.floor(distance/(1000*60*60*24));
+
+    document.getElementById("hours").textContent =
+        Math.floor(
+            (distance%(1000*60*60*24))
+            /(1000*60*60)
+        );
+
+    document.getElementById("minutes").textContent =
+        Math.floor(
+            (distance%(1000*60*60))
+            /(1000*60)
+        );
+
+    document.getElementById("seconds").textContent =
+        Math.floor(
+            (distance%(1000*60))
+            /1000
+        );
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* ARABA */
+
+let carMoved = false;
+
+function driveCar(){
+
+    const car =
+        document.getElementById("car");
+
+    if(!carMoved){
+
+        car.style.left =
+            "calc(100% - 125px)";
+
+        carMoved = true;
+
+    }else{
+
+        car.style.left =
+            "-130px";
+
+        carMoved = false;
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```
 
