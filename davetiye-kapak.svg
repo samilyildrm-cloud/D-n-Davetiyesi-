@@ -1,0 +1,209 @@
+```svg
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="630"
+     viewBox="0 0 1200 630">
+
+  <defs>
+
+    <linearGradient id="bg"
+                    x1="0"
+                    y1="0"
+                    x2="1"
+                    y2="1">
+
+      <stop offset="0%"
+            stop-color="#fffaf7"/>
+
+      <stop offset="50%"
+            stop-color="#f4e1da"/>
+
+      <stop offset="100%"
+            stop-color="#e6c8bc"/>
+
+    </linearGradient>
+
+    <linearGradient id="gold"
+                    x1="0"
+                    y1="0"
+                    x2="1"
+                    y2="1">
+
+      <stop offset="0%"
+            stop-color="#b99062"/>
+
+      <stop offset="50%"
+            stop-color="#e0bd8e"/>
+
+      <stop offset="100%"
+            stop-color="#a97951"/>
+
+    </linearGradient>
+
+  </defs>
+
+
+  <!-- ARKA PLAN -->
+
+  <rect width="1200"
+        height="630"
+        fill="url(#bg)"/>
+
+
+  <!-- DEKORATİF ÇERÇEVE -->
+
+  <rect x="28"
+        y="28"
+        width="1144"
+        height="574"
+        rx="35"
+        fill="none"
+        stroke="#b99062"
+        stroke-width="2"/>
+
+  <rect x="42"
+        y="42"
+        width="1116"
+        height="546"
+        rx="30"
+        fill="none"
+        stroke="#d8b69d"
+        stroke-width="1"/>
+
+
+  <!-- ÜST SÜS -->
+
+  <text x="600"
+        y="105"
+        text-anchor="middle"
+        font-size="32"
+        fill="url(#gold)">
+    ❦
+  </text>
+
+
+  <!-- DAVET -->
+
+  <text x="600"
+        y="155"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="20"
+        letter-spacing="6"
+        fill="#967064">
+    DÜĞÜNÜMÜZE DAVETLİSİNİZ
+  </text>
+
+
+  <!-- İSİMLER -->
+
+  <text x="600"
+        y="250"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="82"
+        font-style="italic"
+        fill="#704747">
+    Aryan
+  </text>
+
+
+  <text x="600"
+        y="305"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="34"
+        fill="url(#gold)">
+    &amp;
+  </text>
+
+
+  <text x="600"
+        y="385"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="82"
+        font-style="italic"
+        fill="#704747">
+    Erkam
+  </text>
+
+
+  <!-- AYRAÇ -->
+
+  <line x1="390"
+        y1="420"
+        x2="810"
+        y2="420"
+        stroke="#c39b7b"
+        stroke-width="1"/>
+
+
+  <!-- TARİH -->
+
+  <text x="600"
+        y="470"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="23"
+        letter-spacing="2"
+        fill="#795652">
+    31 AĞUSTOS 2026 • 18:00
+  </text>
+
+
+  <!-- SALON -->
+
+  <text x="600"
+        y="510"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="18"
+        fill="#876762">
+    BEYAZSARAY DÜĞÜN SALONU • KAHTA / ADIYAMAN
+  </text>
+
+
+  <!-- ALT SÜS -->
+
+  <text x="600"
+        y="555"
+        text-anchor="middle"
+        font-size="30"
+        fill="url(#gold)">
+    ❦
+  </text>
+
+
+  <!-- ÇİÇEK SÜSLERİ -->
+
+  <text x="95"
+        y="100"
+        font-size="45"
+        fill="#b99062">
+    ❀
+  </text>
+
+  <text x="1080"
+        y="100"
+        font-size="45"
+        fill="#b99062">
+    ❀
+  </text>
+
+  <text x="95"
+        y="560"
+        font-size="45"
+        fill="#b99062">
+    ❀
+  </text>
+
+  <text x="1080"
+        y="560"
+        font-size="45"
+        fill="#b99062">
+    ❀
+  </text>
+
+</svg>
+```
